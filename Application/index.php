@@ -20,7 +20,7 @@ echo '
             </a>
         </div>
             <div class="content-body">
-                <div class="success-text">Success!</div>
+                <div class="success-text">CentralPark</div>
                 <div class="description line-1">
 				<?php
 				echo "Your Github Repository with Github Actions has been successfully setup";
