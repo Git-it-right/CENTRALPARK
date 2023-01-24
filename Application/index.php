@@ -41,7 +41,7 @@ echo '
             <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
         </div>
         
-       s
+
 <div class="main-container">
         <div class="cloud-image">
             <img src="img/successCloudNew.svg" alt="successCloudNew" />
