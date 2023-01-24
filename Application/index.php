@@ -1,5 +1,16 @@
 <?php  
-        <!-- Nav tabs -->
+        
+echo ' 
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>PHP Application</title>
+	<link href="css/site.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Nav tabs -->
         <ul class="nav nav-tabs" id="s">
             <li class="nav-item">
                 <a href="#tab1Id" class="nav-link active">Active</a>
@@ -36,16 +47,6 @@
                 $(this).tab('show');
             });
         </script>
-echo ' 
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<title>PHP Application</title>
-	<link href="css/site.css" rel="stylesheet">
-</head>
-
-<body>
 <div class="main-container">
         <div class="cloud-image">
             <img src="img/successCloudNew.svg" alt="successCloudNew" />
