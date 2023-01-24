@@ -22,9 +22,9 @@ echo '
             <div class="content-body">
                 <div class="success-text">CentralPark</div>
                 <div class="description line-1">
-				<?php
-				echo "Your Github Repository: CENTRALPARK with Github Actions has been successfully setup";
-				?>
+			
+				"Your Github Repository: CENTRALPARK with Github Actions has been successfully setup"
+				
 				</div>
                 <div class="description line-2">
 				<?php
