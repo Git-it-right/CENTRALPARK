@@ -11,10 +11,11 @@ echo '
 
 <body>
 <![endif]-->
+
+<div class="main-container">
 <iframe width="1080px" height="1920px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__tJO_StURVVPNVFGRTZENkpUVkMzSVpVRFUxNURXQi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
     allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
-<div class="main-container">
         <div class="cloud-image">
             <img src="img/successCloudNew.svg" alt="successCloudNew" />
         </div>
