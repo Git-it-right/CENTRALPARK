@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -16,39 +17,66 @@
 
 <body>
     <div class="container">
-        <form>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="shopping">
-                <label class="form-check-label" for="shopping">Shopping</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="t-paper">
-                <label class="form-check-label" for="t-paper">T-Paper</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="dct">
-                <label class="form-check-label" for="dct">DCT</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="yoga-ball">
-                <label class="form-check-label" for="yoga-ball">Yoga</label>
-            </div>
+        <form id="grocery-list">
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="T-Paper" id="T-Paper" name="grocery-item">
+                    <label class="form-check-label" for="T-Paper">T-Paper</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="DCT" id="DCT" name="grocery-item">
+                    <label class="form-check-label" for="DCT">DCT</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Yoga Ball" id="Yoga Ball" name="grocery-item">
+                    <label class="form-check-label" for="Yoga Ball">Yoga Ball</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Paper Towels" id="Paper Towels" name="grocery-item">
+                    <label class="form-check-label" for="Paper Towels">Paper Towels</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Hair bands" id="Hair bands" name="grocery-item">
+                    <label class="form-check-label" for="Hair bands">Hair bands</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="chicken" id="chicken" name="grocery-item">
+                    <label class="form-check-label" for="chicken">chicken</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="milk" id="milk" name="grocery-item">
+                    <label class="form-check-label" for="milk">milk</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="new shoes" id="new shoes" name="grocery-item">
+                    <label class="form-check-label" for="new shoes">new shoes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="gym clothes pick n pay" id="gym clothes pick n pay" name="grocery-item">
+                    <label class="form-check-label" for="gym clothes pick n pay">gym clothes pick n pay</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Woolies" id="Woolies" name="grocery-item">
+                    <label class="form-check-label" for="Woolies">Woolies</label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
         </form>
-    </div>
-    <script>
-        $(document).ready(function() {
-            $("#grocery-list").submit(function(e) {
-                e.preventDefault();
-                $(":checkbox:checked").each(function() {
-                    $(this).remove();
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#grocery-list").submit(function(e) {
+                    e.preventDefault();
+                    $(":checkbox:checked").each(function() {
+                        $(this).next().remove();
+                        $(this).remove();
+
+                    });
+                    alert("Selected items have been removed from the list.");
                 });
-                alert("Selected items have been removed from the list.");
             });
-        });
-    </script>
+        </script>
 
 </body>
 
