@@ -93,10 +93,11 @@
                         "priority": "High",
                         "status": "Open",
                         "title": "Example Issue Title",
-                        "updated_at": "2022-02-16T12:30:00Z"
+                        "updated_at": "2022-02-16T12:30:00  Z"
                     }),
                     success: function(response) {
                         console.log(response);
+                        $("#r1").append(response);
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log('Error:', errorThrown);
@@ -104,23 +105,14 @@
                 });
             });
             var jq = $.noConflict();
+            a
         </script>
         <table aria-label="Selected Work Items" style="font-family: Calibri, sans-serif; border-collapse: collapse; border: 0px; max-height: 180px; width: 100%;">
             <tbody>
-                <tr style="background: rgb(16, 110, 190); color: white; vertical-align: top;">
+                <tr style="background: rgb(16, 110, 190); color: white; vertical-align: top;" id="r1">
                     <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">ID</th>
                     <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Work Item Type</th>
                     <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Title</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Assigned To</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Tags</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Task Type</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">State</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Team Project</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Stack Rank</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Remaining Work</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Area ID</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Iteration Path</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Iteration ID</th>
                     <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Area Path</th>
                     <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">Activity</th>
                 </tr>
