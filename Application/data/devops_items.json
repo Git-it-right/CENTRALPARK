@@ -1,0 +1,25 @@
+{
+    "workItems": [
+        {
+            "id": 1,
+            "workItem": "WI-0001",
+            "title": "Update website content",
+            "areaPath": "Website/Content",
+            "activity": "Content Update"
+        },
+        {
+            "id": 2,
+            "workItem": "WI-0002",
+            "title": "Implement CI/CD pipeline",
+            "areaPath": "DevOps/Infrastructure",
+            "activity": "Pipeline Implementation"
+        },
+        {
+            "id": 3,
+            "workItem": "WI-0003",
+            "title": "Upgrade database server",
+            "areaPath": "DevOps/Infrastructure/Database",
+            "activity": "Server Upgrade"
+        }
+    ]
+}

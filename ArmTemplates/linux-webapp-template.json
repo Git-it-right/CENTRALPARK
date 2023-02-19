@@ -7,7 +7,7 @@
         },
         "hostingPlanName": {
             "type": "string"
-        },
+        
         "appInsightsLocation": {
             "type": "string"
         },
