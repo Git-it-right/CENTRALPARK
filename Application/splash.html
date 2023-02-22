@@ -83,32 +83,32 @@
                         }
                     });
                 });
-            });
 
-            $.ajax({
-                url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({
-                    "area": "home",
-                    "created_at": "2022-02-14T16:45:00Z",
-                    "description": "This is an example issue description.",
-                    "id": 12345,
-                    "labels": ["bug", "high priority"],
-                    "priority": "High",
-                    "status": "Open",
-                    "title": "Example Issue Title",
-                    "updated_at": "2022-02-16T12:30:00  Z"
-                }),
-                success: function(response) {
-                    console.log(response);
-                    $("#r1").append(response);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log('Error:', errorThrown);
-                }
-            });
-            $(document).ready(function() {
+
+                $.ajax({
+                    url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        "area": "home",
+                        "created_at": "2022-02-14T16:45:00Z",
+                        "description": "This is an example issue description.",
+                        "id": 12345,
+                        "labels": ["bug", "high priority"],
+                        "priority": "High",
+                        "status": "Open",
+                        "title": "Example Issue Title",
+                        "updated_at": "2022-02-16T12:30:00  Z"
+                    }),
+                    success: function(response) {
+                        console.log(response);
+                        $("#r1").append(response);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log('Error:', errorThrown);
+                    }
+                });
+
                 $.ajax({
                     url: 'update_json.php',
                     type: 'POST',
@@ -153,7 +153,6 @@
                     }
                 });
             });
-            var jq = $.noConflict();
         </script>
         <table aria-label="Selected Work Items" style="font-family: Calibri, sans-serif; border-collapse: collapse; border: 0px; max-height: 180px; width: 100%;">
             <tbody>
