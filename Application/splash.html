@@ -70,6 +70,22 @@
         </div>
         <script>
             $(document).ready(function() {
+                $('#update-json').click(function() {
+                    $.ajax({
+                        url: 'update_json.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function(response) {
+                            console.log('JSON updated!');
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            console.log('Error updating JSON: ' + textStatus);
+                        }
+                    });
+                });
+            });
+
+            $(document).ready(function() {
 
                 $("#grocery-list").submit(function(e) {
                     e.preventDefault();
@@ -80,6 +96,7 @@
                     });
                     alert("Selected items have been removed from the list.");
                 });
+
                 $.ajax({
                     url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
                     type: 'POST',
