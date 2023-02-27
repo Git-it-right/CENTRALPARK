@@ -6,10 +6,17 @@
     <title>Grocery List</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <style>
         .form-check {
             margin-bottom: 10px;
@@ -32,15 +39,18 @@
                     <label class="form-check-label" for="DCT">DCT</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Yoga Ball" id="Yoga Ball" name="grocery-item">
+                    <input class="form-check-input" type="checkbox" value="Yoga Ball" id="Yoga Ball"
+                        name="grocery-item">
                     <label class="form-check-label" for="Yoga Ball">Yoga Ball</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Paper Towels" id="Paper Towels" name="grocery-item">
+                    <input class="form-check-input" type="checkbox" value="Paper Towels" id="Paper Towels"
+                        name="grocery-item">
                     <label class="form-check-label" for="Paper Towels">Paper Towels</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="Hair bands" id="Hair bands" name="grocery-item">
+                    <input class="form-check-input" type="checkbox" value="Hair bands" id="Hair bands"
+                        name="grocery-item">
                     <label class="form-check-label" for="Hair bands">Hair bands</label>
                 </div>
                 <div class="form-check">
@@ -52,11 +62,13 @@
                     <label class="form-check-label" for="milk">milk</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="new shoes" id="new shoes" name="grocery-item">
+                    <input class="form-check-input" type="checkbox" value="new shoes" id="new shoes"
+                        name="grocery-item">
                     <label class="form-check-label" for="new shoes">new shoes</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="gym clothes pick n pay" id="gym clothes pick n pay" name="grocery-item">
+                    <input class="form-check-input" type="checkbox" value="gym clothes pick n pay"
+                        id="gym clothes pick n pay" name="grocery-item">
                     <label class="form-check-label" for="gym clothes pick n pay">gym clothes pick n pay</label>
                 </div>
                 <div class="form-check">
@@ -67,208 +79,262 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
         </form>
-        </div>
-        <script>
-            $(document).ready(function() {
-                $('#update-json').click(function() {
-                    $.ajax({
-                        url: 'update_json.php',
-                        type: 'POST',
-                        dataType: 'json',
-                        success: function(response) {
-                            console.log('JSON updated!');
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log('Error updating JSON: ' + textStatus);
-                        }
-                    });
-                });
-
-
-                $.ajax({
-                    url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({
-                        "area": "home",
-                        "created_at": "2022-02-14T16:45:00Z",
-                        "description": "This is an example issue description.",
-                        "id": 12345,
-                        "labels": ["bug", "high priority"],
-                        "priority": "High",
-                        "status": "Open",
-                        "title": "Example Issue Title",
-                        "updated_at": "2022-02-16T12:30:00  Z"
-                    }),
-                    success: function(response) {
-                        console.log(response);
-                        $("#r1").append(response);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.log('Error:', errorThrown);
-                    }
-                });
-
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#update-json').click(function () {
                 $.ajax({
                     url: 'update_json.php',
                     type: 'POST',
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         alert('JSON updated!');
                     },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        alert('Error updating JSON: ' + textStatus);
-                    }
-                });
-                $("#grocery-list").submit(function(e) {
-                    e.preventDefault();
-                    $(":checkbox:checked").each(function() {
-                        $(this).next().remove();
-                        $(this).remove();
-
-                    });
-                    alert("Selected items have been removed from the list.");
-                });
-                $.ajax({
-                    url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({
-                        "area": "home",
-                        "created_at": "2022-02-14T16:45:00Z",
-                        "description": "This is an example issue description.",
-                        "id": 12345,
-                        "labels": ["bug", "high priority"],
-                        "priority": "High",
-                        "status": "Open",
-                        "title": "Example Issue Title",
-                        "updated_at": "2022-02-16T12:30:00  Z"
-                    }),
-                    success: function(response) {
-                        console.log(response);
-                        $("#r1").append(response);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.log('Error:', errorThrown);
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log('Error updating JSON: ' + textStatus);
                     }
                 });
             });
-        </script>
-        <table aria-label="Selected Work Items" style="font-family: Calibri, sans-serif; border-collapse: collapse; border: 0px; max-height: 180px; width: 100%;">
-            <tbody>
-                <tr style="background: rgb(16, 110, 190); color: white; vertical-align: top;" id="r1">
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
-                        ID</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
-                        Work Item Type</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
-                        Title</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
-                        Area Path</th>
-                    <th style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
-                        Activity</th>
-                </tr>
-                <tr style="background: rgba(124, 124, 124, 0.5); vertical-align: top;">
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        <a href="/morndoge/2ba92dd8-9700-47fc-b57c-a9fe3031bfc4/_workitems/edit/16" target="_blank" tabindex="0">16</a>
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Issue</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Kitchen DeClutter</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        To Do</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        2</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject\Clean</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        6</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                </tr>
-                <tr style="background: inherit; vertical-align: top;">
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        <a href="/morndoge/2ba92dd8-9700-47fc-b57c-a9fe3031bfc4/_workitems/edit/17" target="_blank" tabindex="0">17</a>
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Task</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Sort Cabinets</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        To Do</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        2</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject\Clean</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        6</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                </tr>
-                <tr style="background: rgba(124, 124, 124, 0.5); vertical-align: top;">
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        <a href="/morndoge/2ba92dd8-9700-47fc-b57c-a9fe3031bfc4/_workitems/edit/18" target="_blank" tabindex="0">18</a>
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Task</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Spice Cabinet</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        Morne Roos &lt;morndoge@gmail.com&gt;</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        To Do</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        2</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject\Clean</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        6</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                        CentralProject</td>
-                    <td style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+
+            $.ajax({
+                url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    "area": "home",
+                    "created_at": "2022-02-14T16:45:00Z",
+                    "description": "This is an example issue description.",
+                    "id": 12345,
+                    "labels": ["bug", "high priority"],
+                    "priority": "High",
+                    "status": "Open",
+                    "title": "Example Issue Title",
+                    "updated_at": "2022-02-16T12:30:00  Z"
+                }),
+                success: function (response) {
+                    console.log(response);
+                    $("#r1").append(response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('Error:', errorThrown);
+                }
+            });
+
+            $.ajax({
+                url: 'update_json.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    alert('JSON updated!');
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert('Error updating JSON: ' + textStatus);
+                }
+            });
+            $("#grocery-list").submit(function (e) {
+                e.preventDefault();
+                $(":checkbox:checked").each(function () {
+                    $(this).next().remove();
+                    $(this).remove();
+
+                });
+                alert("Selected items have been removed from the list.");
+            });
+            $.ajax({
+                url: 'https://prod-25.southafricanorth.logic.azure.com:443/workflows/98fa13cfaa3b4aa185d2aecc8bd4b4d0/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=g-_yyVXPtKEC9YOIerMHgV_qjxUpgIa3mevfShYoomY',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    "area": "home",
+                    "created_at": "2022-02-14T16:45:00Z",
+                    "description": "This is an example issue description.",
+                    "id": 12345,
+                    "labels": ["bug", "high priority"],
+                    "priority": "High",
+                    "status": "Open",
+                    "title": "Example Issue Title",
+                    "updated_at": "2022-02-16T12:30:00  Z"
+                }),
+                success: function (response) {
+                    console.log(response);
+                    $("#r1").append(response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('Error:', errorThrown);
+                }
+            });
+        });
+    </script>
+    <table aria-label="Selected Work Items"
+        style="font-family: Calibri, sans-serif; border-collapse: collapse; border: 0px; max-height: 180px; width: 100%;">
+        <tbody>
+            <tr style="background: rgb(16, 110, 190); color: white; vertical-align: top;" id="r1">
+                <th
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
+                    ID</th>
+                <th
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
+                    Work Item Type</th>
+                <th
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
+                    Title</th>
+                <th
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
+                    Area Path</th>
+                <th
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px;">
+                    Activity</th>
+            </tr>
+            <tr style="background: rgba(124, 124, 124, 0.5); vertical-align: top;">
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    <a href="/morndoge/2ba92dd8-9700-47fc-b57c-a9fe3031bfc4/_workitems/edit/16" target="_blank"
+                        tabindex="0">16</a>
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Issue</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Kitchen DeClutter</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    To Do</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    2</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject\Clean</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    6</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+            </tr>
+            <tr style="background: inherit; vertical-align: top;">
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    <a href="/morndoge/2ba92dd8-9700-47fc-b57c-a9fe3031bfc4/_workitems/edit/17" target="_blank"
+                        tabindex="0">17</a>
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Task</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Sort Cabinets</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    To Do</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    2</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject\Clean</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    6</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+            </tr>
+            <tr style="background: rgba(124, 124, 124, 0.5); vertical-align: top;">
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    <a href="/morndoge/2ba92dd8-9700-47fc-b57c-a9fe3031bfc4/_workitems/edit/18" target="_blank"
+                        tabindex="0">18</a>
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Task</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Spice Cabinet</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    Morne Roos &lt;morndoge@gmail.com&gt;</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    To Do</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    2</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject\Clean</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    6</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                    CentralProject</td>
+                <td
+                    style="border-top: none; border-right: 1pt solid white; border-bottom: none; border-left: none; border-image: initial; padding: 1.45pt 0.05in; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, Verdana; font-size: 12px; max-width: 50px;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
     </DIV>
 </body>
 
