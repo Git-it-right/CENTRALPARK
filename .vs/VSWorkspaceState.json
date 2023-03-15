@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Application",
+    "\\Application\\data"
   ],
-  "SelectedNode": "\\C:\\Users\\mornd\\Source\\Repos\\Git-it-right\\CENTRALPARK",
+  "SelectedNode": "\\Application\\data\\devops_items.json",
   "PreviewInSolutionExplorer": false
 }
